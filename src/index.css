@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --light-cyan: #9fe8df;
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --red: #e17457;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Space Mono", system-ui;
+
+  min-height: 100vh;
+  background-color: var(--light-grayish-cyan);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tip-calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.calculator {
+  background-color: var(--white);
+  height: 48.1rem;
+  width: 92rem;
+  filter: drop-shadow(0 32px 43px rgba(79, 166, 175, 20.07%));
+  border-radius: 2.5rem;
+  padding: 4rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 4rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.input-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.label-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  color: var(--dark-grayish-cyan);
+  font-weight: bold;
+}
+
+.label.error {
+  color: var(--red);
+}
+
+.input-container {
+  width: 100%;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.input {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--very-light-grayish-cyan);
+  appearance: none;
+  font: inherit;
+  font-weight: bold;
+  font-size: 2.4rem;
+  text-align: right;
+  color: var(--very-dark-cyan);
+  width: 100%;
+  transition: all 0.05s ease;
+}
+
+.input::placeholder {
+  color: #9ebbbd;
+}
+
+.input:focus {
+  outline: var(--strong-cyan) solid;
+}
+
+.input:hover {
+  outline: var(--strong-cyan) solid;
+  cursor: pointer;
+}
+
+.input.error {
+  outline: var(--red) solid;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.input.custom {
+  text-align: center;
+  padding: 1rem;
+  width: auto;
+}
+
+.input.custom::placeholder {
+  color: var(--dark-grayish-cyan);
+}
+
+.tip-options {
+  display: grid;
+  grid-template-columns: 11.7rem 11.7rem 11.7rem;
+  grid-template-rows: 4.8rem 4.8rem;
+  gap: 1rem;
+}
+
+.tip-option {
+  border: none;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  font: inherit;
+  font-size: 2.4rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.active {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.tip-option:hover {
+  cursor: pointer;
+  background-color: #9fe8df;
+  color: var(--very-dark-cyan);
+}
+
+.display {
+  background-color: var(--very-dark-cyan);
+  border-radius: 1.5rem;
+  padding: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.display__top {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.reset-btn {
+  width: 100%;
+  height: 4.8rem;
+  border: none;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  font: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  cursor: pointer;
+  background-color: var(--light-cyan);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.units {
+  font-size: 1.3rem;
+  color: var(--grayish-cyan);
+  font-weight: bold;
+}
+
+.amount {
+  font-weight: bold;
+  color: var(--strong-cyan);
+  letter-spacing: -0.1rem;
+  font-size: 4.8rem;
+}
