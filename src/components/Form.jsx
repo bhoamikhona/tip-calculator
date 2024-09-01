@@ -8,20 +8,29 @@ function Form() {
   const [bill, setBill] = useState("");
   const [selectTipPercent, setSelectTipPercent] = useState(null);
   const [customTipPercent, setCustomTipPercent] = useState("");
-  const [people, setPeople] = useState(1);
+  const [people, setPeople] = useState("");
+
+  function handleTipButtonClick(percent) {
+    setSelectTipPercent(percent);
+    setCustomTipPercent("");
+  }
 
   function handleFormSubmit(e) {
     e.preventDefault();
 
-    if (people < 1) {
-      setError(true);
-      return;
-    }
-
     const tip = selectTipPercent ? selectTipPercent : customTipPercent;
-    const numOfPeople = people ? people : 1;
-    const tipAmount = ((tip / 100) * bill) / numOfPeople;
-    alert(tipAmount);
+
+    alert(tip);
+  }
+
+  function handlePeopleChange(e) {
+    const numOfPeople = Number(e.target.value);
+    if (numOfPeople < 1) {
+      setError(true);
+    } else {
+      setPeople(Number(e.target.value));
+      setError(false);
+    }
   }
 
   return (
@@ -58,7 +67,7 @@ function Form() {
               key={percent}
               percent={percent}
               isSelected={percent === selectTipPercent}
-              onSelectTipPercent={setSelectTipPercent}
+              onSelectTipPercent={handleTipButtonClick}
             />
           ))}
 
@@ -100,7 +109,7 @@ function Form() {
             placeholder="0"
             autoComplete="off"
             value={people}
-            onChange={(e) => setPeople(Number(e.target.value))}
+            onChange={handlePeopleChange}
           />
         </div>
       </div>
