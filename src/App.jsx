@@ -3,9 +3,9 @@ import TipCalculator from "./components/TipCalculator.jsx";
 
 function App() {
   return (
-    <>
+    <div className="app">
       <TipCalculator />
-    </>
+    </div>
   );
 }
 
