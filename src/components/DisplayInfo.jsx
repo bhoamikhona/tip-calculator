@@ -8,7 +8,9 @@ function DisplayInfo({ children, amount }) {
         <span className="display-info__unit">/ person</span>
       </div>
       <div className="display-info__right">
-        <span className="display-info__amount">${amount}</span>
+        <span className="display-info__amount">
+          ${amount ? Number(amount).toFixed(2) : Number(0).toFixed(2)}
+        </span>
       </div>
     </div>
   );

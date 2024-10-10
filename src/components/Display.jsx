@@ -1,12 +1,12 @@
 import React from "react";
 import DisplayInfo from "./DisplayInfo.jsx";
 
-function Display() {
+function Display({ tipAmount, totalAmount }) {
   return (
     <div className="display">
       <div className="display__top">
-        <DisplayInfo amount={4.27}>Tip Amount</DisplayInfo>
-        <DisplayInfo amount={32.79}>Total</DisplayInfo>
+        <DisplayInfo amount={tipAmount}>Tip Amount</DisplayInfo>
+        <DisplayInfo amount={totalAmount}>Total</DisplayInfo>
       </div>
       <div className="display__bottom">
         <button className="btn-reset">Reset</button>
