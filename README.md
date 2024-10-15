@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![image](https://github.com/user-attachments/assets/f1f34282-69ee-4158-a77b-3a98a1c8c7fb)
+![tip-calculator-screenshot](https://github.com/user-attachments/assets/6d47b588-d6d4-449f-9896-dc6f2fde1b4b)
 
 ### Links
 
