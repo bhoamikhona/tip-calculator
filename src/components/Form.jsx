@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Form({ onSetTipAmount, onSetTotalAmount }) {
+function Form({ onSetTipAmount, onSetTotalAmount, reset, onReset }) {
   const [bill, setBill] = useState("");
   const [people, setPeople] = useState(1);
   const [isSelected, setIsSelected] = useState(null);
@@ -77,6 +77,14 @@ function Form({ onSetTipAmount, onSetTotalAmount }) {
 
     onSetTipAmount(tipAmountPerPerson);
     onSetTotalAmount(totalAmountPerPerson);
+
+    if (reset) {
+      setBill("");
+      setPeople(1);
+      setIsSelected(null);
+      setCustomTipPercent("");
+      onReset(false);
+    }
   }, [
     bill,
     people,
@@ -84,6 +92,8 @@ function Form({ onSetTipAmount, onSetTotalAmount }) {
     customTipPercent,
     onSetTipAmount,
     onSetTotalAmount,
+    reset,
+    onReset,
   ]);
 
   return (

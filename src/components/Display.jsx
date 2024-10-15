@@ -1,7 +1,7 @@
 import React from "react";
 import DisplayInfo from "./DisplayInfo.jsx";
 
-function Display({ tipAmount, totalAmount }) {
+function Display({ tipAmount, totalAmount, onReset }) {
   return (
     <div className="display">
       <div className="display__top">
@@ -9,7 +9,9 @@ function Display({ tipAmount, totalAmount }) {
         <DisplayInfo amount={totalAmount}>Total</DisplayInfo>
       </div>
       <div className="display__bottom">
-        <button className="btn-reset">Reset</button>
+        <button className="btn-reset" onClick={() => onReset(true)}>
+          Reset
+        </button>
       </div>
     </div>
   );
