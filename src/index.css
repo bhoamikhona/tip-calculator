@@ -68,6 +68,10 @@ input[type="number"] {
 .logo {
 }
 
+.visually-hidden {
+  display: none;
+}
+
 /***** Main *****/
 .calculator {
   background-color: var(--white);
@@ -274,6 +278,7 @@ input[type="number"] {
 .attribution {
   color: var(--dark-grayish-cyan);
   font-size: 1.4rem;
+  text-align: center;
 }
 
 .attribution-link:link,
